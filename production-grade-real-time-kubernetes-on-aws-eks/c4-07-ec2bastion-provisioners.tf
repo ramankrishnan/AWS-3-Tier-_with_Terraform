@@ -17,10 +17,11 @@ resource "null_resource" "copy_ec2_keys" {
   }
 ## Remote Exec Provisioner: Using remote-exec provisioner fix the private key permissions on Bastion Host
   provisioner "remote-exec" {
-    inline = [
-      "sudo chmod 400 /tmp/eks-terraform-key.pem"
-    ]
-  }
+  inline = [
+    "sudo chmod 400 /tmp/eks-terraform-key.pem"
+  ]
+}
+
 ## Local Exec Provisioner:  local-exec provisioner (Creation-Time Provisioner - Triggered during Create Resource)
   provisioner "local-exec" {
     command = "echo VPC created on `date` and VPC ID: ${module.vpc.vpc_id} >> creation-time-vpc-id.txt"
