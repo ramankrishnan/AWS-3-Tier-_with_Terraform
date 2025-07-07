@@ -11,9 +11,11 @@
 ✅ **Infrastructure as Code (IaC)** – Modular Terraform templates for VPC, EKS, RDS, IAM
 
 ✅ **Full Stack Kubernetes Deployment** – React frontend + API backend on EKS
+
 ✅ **Logging & Monitoring** – CloudWatch, HPA, Fluent Bit
+
 ✅ **Security** – IAM Roles, VPC-level isolation, Secrets Manager
-✅ **CI/CD** – GitHub Actions + AWS ECR for image automation
+
 ✅ **Custom Domain** – Route 53 integration for clean URLs
 
 ---
@@ -36,8 +38,8 @@
 ## 🗂️ Project Structure
 ```
 AWS-3-Tier-_with_Terraform/
-├── Netflix-clone/                          # Lambda-based ETL pulling data from a public API (e.g., Netflix-style)
-│   └── lambda_function.py                  # Lambda code to fetch, process and store API data
+├── Netflix-clone/                          #  (e.g., Netflix-style)
+│                 
 │
 ├── kubernetes/                             # Kubernetes application deployment manifests
 │   ├── backend-deployment.yaml             # Backend API Deployment
@@ -47,7 +49,7 @@ AWS-3-Tier-_with_Terraform/
 │   ├── frontend-deployment.yaml            # Frontend UI Deployment
 │   ├── frontend-service.yaml               # LoadBalancer service for frontend
 │   ├── hpa.yaml                            # Horizontal Pod Autoscaler
-│   └── secret.yaml                         # Sensitive configuration values (e.g., API keys)
+│   
 │
 ├── monitoring/                             # CloudWatch/Fluent Bit integration and alerting setup
 │   └── cloudwatch.tf                       # Terraform for alarms, metrics, and SNS
