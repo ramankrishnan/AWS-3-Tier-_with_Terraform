@@ -33,20 +33,35 @@
 
 ## 🗂️ Project Structure
 
-```
 AWS-3-Tier-_with_Terraform/
-├── terraform/                        # IaC Modules (VPC, EKS, RDS, IAM)
-├── k8s/                              # Kubernetes manifests (App + Monitoring)
-│   ├── backend/                      # Backend Deployment & Service
-│   ├── frontend/                     # Frontend Deployment & Service
-│   └── monitoring/                   # Fluent Bit, CloudWatch, HPA
-├── lambda/                           # ETL Lambda Function (Netflix API)
-├── cicd/                             # GitHub Actions workflows
-├── outputs/                          # Screenshots, domain snapshots, logs
-└── README.md                         # Project documentation
-```
+├── Netflix-clone/                          # Lambda-based ETL pulling data from a public API (e.g., Netflix-style)
+│   └── lambda_function.py                  # Lambda code to fetch, process and store API data
+│
+├── kubernetes/                             # Kubernetes application deployment manifests
+│   ├── backend-deployment.yaml             # Backend API Deployment
+│   ├── backend-service.yaml                # ClusterIP service for backend
+│   ├── configmap.yaml                      # App config (ENV values)
+│   ├── data-fetcher-cronjob.yaml           # CronJob for periodic tasks (API ETL)
+│   ├── frontend-deployment.yaml            # Frontend UI Deployment
+│   ├── frontend-service.yaml               # LoadBalancer service for frontend
+│   ├── hpa.yaml                            # Horizontal Pod Autoscaler
+│   └── secret.yaml                         # Sensitive configuration values (e.g., API keys)
+│
+├── monitoring/                             # CloudWatch/Fluent Bit integration and alerting setup
+│   └── cloudwatch.tf                       # Terraform for alarms, metrics, and SNS
+│
+├── production-grade-real-time-kubernetes-on-aws-eks/  # Terraform IaC for AWS infra
+│   ├── c1-versions.tf                      # Terraform provider versions
+│   ├── c2-01-generic-variables.tf          # Common variables
+│   ├── c4-01-ec2bastion-variables.tf       # EC2 Bastion Host variables
+│   ├── c4-02-ec2bastion-outputs.tf         # EC2 Bastion Host outputs
+│   ├── c5-01-eks-variables.tf              # EKS-specific variables
+│   ├── c5-02-eks-outputs.tf                # EKS outputs
+│   ├── c5-08-eks-node-group-private.tf     # EKS Node Group configuration
+│   └── ec2bastion.auto.tfvars              # Auto variables for EC2 Bastion
+│
+└── README.md                               # Full project documentation
 
----
 
 ## 🎯 Milestone Progress
 
