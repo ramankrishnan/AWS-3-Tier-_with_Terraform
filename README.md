@@ -70,3 +70,57 @@ Before deploying this project, ensure the following tools are installed:
 ![Architecture Diagram](./assets/architecture.png)
 
 
+
+---
+
+## 🧱 Stage 2: Infrastructure as Code (Terraform Templates)
+
+> 📍 Path: `production-grade-real-time-kubernetes-on-aws-eks/`
+
+This stage implements the entire AWS infrastructure using **modular and production-grade Terraform templates**, following IaC best practices to ensure **reusability**, **parameterization**, **security**, and **high availability**.
+
+---
+
+### ✅ What It Provisions
+
+| Stack              | Resources Created                                                                 |
+|-------------------|-------------------------------------------------------------------------------------|
+| 🧭 Networking      | VPC, Public & Private Subnets, Route Tables, NAT Gateways, IGW, Security Groups    |
+| ☸️ EKS Cluster     | EKS Control Plane, Worker Nodes (via ASG), IAM Roles, Kubernetes config             |
+| 🗄️ Database        | Amazon RDS (PostgreSQL) with subnet groups, enhanced security                      |
+| 📦 Object Storage  | Amazon S3 for storing logs, assets, or backups                                     |
+| 🔐 IAM             | Fine-grained IAM policies and roles for EKS, RDS, and EC2                           |
+
+---
+
+### 🔧 Modular Structure
+
+The code is structured in modules for better organization and reuse:
+
+
+
+---
+
+### 🚀 How to Use the Terraform Code
+
+Ensure you have the following installed and configured:
+- Terraform >= 1.3
+- AWS CLI configured (`aws configure`)
+- IAM user with admin or provisioning access
+
+#### Step-by-Step
+
+```bash
+# Step 1: Navigate to the directory
+cd production-grade-real-time-kubernetes-on-aws-eks/
+
+# Step 2: Initialize Terraform
+terraform init
+
+# Step 3: Preview the plan
+terraform plan
+
+# Step 4: Apply the infrastructure
+terraform apply
+
+
