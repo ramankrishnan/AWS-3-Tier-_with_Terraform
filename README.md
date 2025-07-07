@@ -32,7 +32,7 @@
 ---
 
 ## 🗂️ Project Structure
-
+```
 AWS-3-Tier-_with_Terraform/
 ├── Netflix-clone/                          # Lambda-based ETL pulling data from a public API (e.g., Netflix-style)
 │   └── lambda_function.py                  # Lambda code to fetch, process and store API data
@@ -62,7 +62,7 @@ AWS-3-Tier-_with_Terraform/
 │
 └── README.md                               # Full project documentation
 
-
+```
 ## 🎯 Milestone Progress
 
 | Stage    | Task                                        | Status           | Completion |
