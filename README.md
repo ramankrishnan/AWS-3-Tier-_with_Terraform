@@ -9,9 +9,8 @@
 ✅ **High Availability & Scalability** – Multi-AZ EKS deployment with auto-scaling  
 ✅ **Infrastructure as Code (IaC)** – Terraform modules for VPC, EKS, RDS, IAM  
 ✅ **Full Stack Kubernetes Deployment** – React frontend + API backend on EKS  
-✅ **Logging & Monitoring** – Fluent Bit, CloudWatch, AWS X-Ray, HPA  
-✅ **CI/CD Integration** – GitHub Actions → Docker → AWS ECR → EKS  
-✅ **Security** – IAM Roles, VPC security, Secrets Manager, HTTPS endpoints  
+✅ **Logging & Monitoring** – CloudWatch, HPA   
+✅ **Security** – IAM Roles, VPC security, 
 
 ---
 
@@ -25,9 +24,9 @@
 | 🗃️ DB          | Amazon RDS (PostgreSQL)                |
 | 📦 Container   | Docker + Amazon ECR                    |
 | ⚙️ IaC         | Terraform (modular, reusable)          |
-| 📈 Monitoring  | CloudWatch, AWS X-Ray, HPA             |
-| 🔐 Security    | IAM, KMS, Secrets Manager              |
-| 🔁 CI/CD       | GitHub Actions                         |
+| 📈 Monitoring  | CloudWatch,HPA             |
+| 🔐 Security    | IAM              |
+                         |
 
 ---
 
