@@ -124,3 +124,53 @@ terraform plan
 terraform apply
 
 
+
+---
+
+## ☸️ Stage 3: Kubernetes Deployment on EKS
+
+> 📍 Path: [`k8s/`](https://github.com/ramankrishnan/AWS-3-Tier-_with_Terraform/)
+
+This stage deploys a **sample full-stack application** onto the **Amazon EKS cluster** using Kubernetes manifests. The architecture separates frontend and backend services, handles config securely, and supports horizontal scaling.
+
+---
+
+### 📁 Folder Structure – Kubernetes Manifests
+
+
+---
+
+### 📦 Application Components
+
+| Component     | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| 🧠 Backend     | Node.js or Flask-based API, exposed internally via ClusterIP                |
+| 🌐 Frontend    | React or HTML/CSS static app, exposed publicly via LoadBalancer service     |
+| 🔐 Secrets     | Sensitive data stored in Kubernetes Secrets                                 |
+| ⚙️ Config      | App settings injected via ConfigMaps                                         |
+| 🏥 Probes      | Liveness and Readiness Probes for pod health checks                         |
+| 📈 Autoscaling | HPA enabled based on CPU utilization                                        |
+
+---
+
+### ⚙️ How to Deploy
+
+Make sure `kubectl` is configured for your EKS cluster:
+
+```bash
+# Step 1: Set Kubernetes context (if not already done)
+aws eks --region <your-region> update-kubeconfig --name <your-cluster-name>
+
+# Step 2: Apply backend service
+kubectl apply -f k8s/backend/
+
+# Step 3: Apply frontend service
+kubectl apply -f k8s/frontend/
+
+# Step 4: Apply monitoring + HPA
+kubectl apply -f k8s/monitoring/
+
+```
+
+
+
