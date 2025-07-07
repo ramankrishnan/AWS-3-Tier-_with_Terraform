@@ -7,7 +7,9 @@
 ## 📌 Project Goals
 
 ✅ **High Availability & Scalability** – Multi-AZ EKS deployment with auto-scaling
+
 ✅ **Infrastructure as Code (IaC)** – Modular Terraform templates for VPC, EKS, RDS, IAM
+
 ✅ **Full Stack Kubernetes Deployment** – React frontend + API backend on EKS
 ✅ **Logging & Monitoring** – CloudWatch, HPA, Fluent Bit
 ✅ **Security** – IAM Roles, VPC-level isolation, Secrets Manager
